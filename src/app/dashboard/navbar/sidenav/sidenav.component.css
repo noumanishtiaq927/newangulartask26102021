@@ -1,0 +1,228 @@
+.example-container {
+  width: 100vw;
+  height: 100vh;
+}
+.active {
+  background-color: #0a153527;
+  list-style-position: outside;
+
+}
+.active1 {
+
+  list-style-position: outside;
+
+}
+.mat-panel-title-sidenav {
+  color: rgb(44, 44, 44) !important;
+}
+h3 {
+  text-align: center;
+  margin-left: 10px;
+}
+h2 {
+  margin-left: 30px;
+}
+mat-expansion-panel {
+  margin: 10px 20px 5px 20px;
+}
+mat-drawer {
+  width: 18vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.firstline {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: larger;
+  letter-spacing: 0.2vw;
+  line-height: 2vh;
+}
+
+
+.li-h3 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.user-avatar-sidenav {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: auto;
+  padding: 0.1vh 0.1vw;
+  border-radius: 1.1vh;
+  border: 0.1vw solid gray;
+  object-fit: cover;
+}
+.name-sidenav {
+  font-size: medium;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+}
+.custom-header .mat-expansion-panel-header-title,
+.custom-header .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.custom-header .mat-expansion-panel-header-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.custom-header .mat-expansion-panel-header-description .space-beween {
+  flex: 1;
+}
+.designation-sidenav {
+  font-size: x-small;
+  text-align: center;
+  font-weight: 500;
+  line-height: 0.1vh;
+}
+.biodata-sidenav {
+  margin-top: 1.2vh;
+}
+.home-button {
+  width: 90%;
+  display: block;
+
+  margin: 0 auto;
+  text-align: left;
+}
+.home-button-icon {
+  margin-right: 1vw;
+}
+.users-sidenav-list{
+list-style-type: none;
+list-style-position: outside;
+  margin-left:10px;
+  cursor: pointer;
+  /* padding:10px; */
+}
+.users-sidenav-list li{
+
+margin-left: -15px;
+padding:5px 5px 5px 1px;
+text-align: left;
+vertical-align: middle;
+display: flex;
+align-items: center;
+}
+ul li.active1::before {
+  content: " ";
+  color: transparent;
+  width: 10px;
+  height: 2px;
+margin-left: -20px;
+  margin-right: 15px;
+  margin-top: -10px;
+  background-color: rgb(0, 0, 0);
+  mask-image: url("../../../../assets/pic.jpg");
+  mask-size: cover;
+}
+mat-expansion-panel.mat-expanded  mat-expansion-panel-header{
+  background-color: #0a153527;
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+
+  .user-avatar-sidenav {
+    height: 40px;
+    width: 40px;
+    padding:2px;
+    border: 1px solid rgb(172, 167, 167);
+    object-fit: cover;
+  }
+  .firstline {
+    text-align: center;
+
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 3px;
+  }
+  .designation-sidenav {
+    font-size: x-small;
+    text-align: center;
+    font-weight: 500;
+    line-height: 2px;
+  }
+  .name-sidenav {
+    font-size: medium;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .home-button {
+    width: 90%;
+    text-align: left;
+  }
+  mat-expansion-panel {
+    margin: 0px;
+  }
+  .users-sidenav-list li{
+
+    margin-left: -60px;
+    padding:0px;
+    text-align: left;
+    /* vertical-align: middle; */
+    display: flex;
+    align-items: center;
+    }
+    ul li.active1::before {
+      content: " ";
+      color: transparent;
+      width: 5px;
+      height: 2px;
+    margin-left: 0px;
+      margin-right: 0px;
+      margin-top:-12px;
+      background-color: rgb(0, 0, 0);
+
+    }
+    .home-button-icon {
+      margin: 0vw;
+    }
+    .li-h3 {
+      font-weight: 200;
+      font-size: 10px;
+    }
+    .custom-header .mat-expansion-panel-header-title,
+.custom-header .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.custom-header .mat-expansion-panel-header-description {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.custom-header .mat-expansion-panel-header-description .space-beween {
+  flex: 0;
+}
+mat-expansion-panel-header{
+  padding:0;
+}
+mat-expansion-panel{
+  padding: 0;
+  margin: 0;
+}
+mat-panel-title{
+  padding: 0;
+}
+mat-panel-title h3{
+  padding: 0;
+  display: none;
+}
+mat-panel-title mat-icon{
+  padding: 0;
+ margin-left: 15px;
+
+}
+}

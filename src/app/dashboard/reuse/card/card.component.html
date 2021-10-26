@@ -1,0 +1,20 @@
+<mat-card class="example-card mat-elevation-z7">
+  <mat-card-content>
+    <div class="card-home">
+      <div class="card-home-image">
+        <div [ngClass]="['image-card-style', dynamicName]">
+          <mat-icon class="card-div-icon">{{ iconname }}</mat-icon>
+        </div>
+      </div>
+      <div class="blank-card-div"></div>
+      <div class="details-card-style">
+        <h3>{{ title }}</h3>
+        <h4>{{ number }}</h4>
+      </div>
+    </div>
+    <br />
+    <div class="progress">
+      <div [ngClass]="['progress-bar','progress-bar-striped', color]" role="progressbar" [style]="value" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,132 @@
+.allusers-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 10vh auto;
+  border-radius: 10px;
+}
+.table-spinner {
+  color: aqua !important;
+  width: 100%;
+  height: 100px;
+  margin: auto;
+  max-width: 50%;
+}
+.mat-progress-spinner circle {
+  stroke: aqua !important;
+  stroke-width: 10% !important;
+  height: 20% !important;
+  width: 40% !important;
+}
+.mat-progress-spinner.mat-warn circle,
+.mat-spinner.mat-warn circle {
+  stroke: #36f4a5 !important;
+}
+.table-image {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 2px;
+}
+td {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgb(43, 43, 43);
+  word-break: break-all;
+  line-break: strict;
+  margin: auto;
+}
+
+th {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(128, 128, 128);
+  margin: auto;
+  text-align: center;
+}
+.table-actions-icon-container {
+  display: flex;
+}
+mat-icon.table-action-icon:nth-child(1) {
+  background-color: rgb(151, 151, 151);
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  font-size: 17px;
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+mat-icon.table-action-icon:nth-child(2) {
+  background-color: rgb(243, 135, 12);
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  font-size: 17px;
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.allusers-header {
+  min-height: 64px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(223, 224, 224);
+
+  margin: 10px;
+}
+.header-gap-flex {
+  flex: 1;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.allusers-header-filter {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 8px 20px;
+  border-radius: 20px;
+}
+.allusers-header-filter input {
+  outline-width: 0;
+  border: none;
+  margin: 0 4px;
+}
+
+.allusers-header-icon-left {
+  background-color: rgb(39, 38, 99);
+  padding: 10px;
+  border-radius: 50%;
+  height: auto;
+  width: auto;
+  color: white;
+  margin: 8px 20px;
+  cursor: pointer;
+}
+.mat-table {
+  overflow: scroll;
+  max-height: 500px;
+  width: 100%;
+}
+.table-container {
+  overflow: auto;
+  max-height: 500px;
+  width: 100%;
+}
+
+.allusers-paginator {
+  border-radius: 20px;
+}

@@ -1,0 +1,9 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="mat-elevation-z8" mode="side" opened>
+    <app-sidenav [profilePic]="user.profilePic" [name]="user.firstName" [designation]="user.designation"></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-topnav #apptopnav [profilePic]="user.profilePic" (sidenav)="drawer.toggle()"></app-topnav>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

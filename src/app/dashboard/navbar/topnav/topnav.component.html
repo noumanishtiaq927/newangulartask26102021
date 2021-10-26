@@ -1,0 +1,53 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon color="primary" #menuicon (click)="toggle()">menu</mat-icon>
+  </button>
+
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon *ngIf="showexpand else compressBlock" color="primary">crop_free</mat-icon>
+    <ng-template #compressBlock>
+      <mat-icon color="primary">crop</mat-icon>
+    </ng-template>
+  </button>
+  <button mat-icon-button color="accent" [mat-menu-trigger-for]="notifmenu">
+    <mat-icon color="primary" [matBadge]="leng" matBadgeColor="warn"
+      >notifications</mat-icon
+    >
+  </button>
+  <img [src]="profilePic" alt=""  [mat-menu-trigger-for]="appMenu"/>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon color="primary">settings</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<mat-menu  #appMenu="matMenu" yPosition="below">
+  <button mat-menu-item>Profile</button>
+  <button mat-menu-item (click)="logoutuser()">Logout</button>
+</mat-menu>
+
+
+<mat-menu  #notifmenu="matMenu" yPosition="below">
+  <button mat-menu-item>
+      <img src="../../../../assets/pic.jpg" alt=""/>
+      <small>New Post is pending</small>
+  </button>
+  <button mat-menu-item>
+      <img src="../../../../assets/pic.jpg" alt=""/>
+      <small>New Post is pending</small>
+  </button>
+
+</mat-menu>

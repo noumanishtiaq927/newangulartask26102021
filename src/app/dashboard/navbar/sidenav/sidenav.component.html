@@ -1,0 +1,59 @@
+<br />
+<br />
+<h4 class="firstline">{{ logo | uppercase }}</h4>
+<img *ngIf="!profilePic else elseImg"   class="user-avatar-sidenav" src="../../../../assets/pic.jpg"/>
+<ng-template #elseImg>
+<img
+  class="user-avatar-sidenav"
+  [src]="profilePic"
+  alt=""
+/>
+</ng-template>
+<div class="biodata-sidenav">
+  <p class="name-sidenav">{{ name }}</p>
+  <p class="designation-sidenav">{{ designation }}</p>
+</div>
+<mat-expansion-panel
+  class="mat-elevation-z0 custom-header"
+  hideToggle="true"
+  disabled
+>
+  <mat-expansion-panel-header
+    routerLink="/dashboard"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-panel-title class="mat-panel-title-sidenav">
+      <mat-icon>home</mat-icon>
+      <h3>Home</h3>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+
+<mat-expansion-panel
+  class="mat-elevation-z0 custom-header"
+  hideToggle="true"
+  #example
+>
+  <mat-expansion-panel-header
+  >
+    <mat-panel-title class="mat-panel-title-sidenav">
+      <mat-icon>face</mat-icon>
+      <h3>Users</h3>
+    </mat-panel-title>
+    <mat-panel-description>
+      <h2>
+        <mat-icon *ngIf="!example.expanded">add</mat-icon>
+        <mat-icon *ngIf="example.expanded">remove</mat-icon>
+      </h2>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <ul class="users-sidenav-list">
+    <li class="users-sidenav-list-items" routerLink="/dashboard/adduser" routerLinkActive="active1">
+      <h5 class="li-h3">Add User</h5>
+    </li>
+    <li routerLink="/dashboard/allusers" routerLinkActive="active1">
+      <h5 class="li-h3">All Users</h5>
+    </li>
+  </ul>
+</mat-expansion-panel>

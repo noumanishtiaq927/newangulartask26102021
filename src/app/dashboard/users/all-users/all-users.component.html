@@ -1,0 +1,132 @@
+<div class="allusers-container mat-elevation-z8">
+  <div class="allusers-header">
+    <div class="allusers-header-filter">
+      <mat-icon>search</mat-icon>
+      <input (keyup)="applyFilter($event)" #input placeholder="Search" />
+    </div>
+    <div class="header-gap-flex"></div>
+    <div>
+      <mat-icon class="allusers-header-icon-left" (click)="onRefresh()"  matTooltip="Refresh the Data"
+      matTooltipPosition="above"
+     matTooltipHideDelay="100">refresh</mat-icon>
+    </div>
+  </div>
+  <div class="table-container">
+    <mat-progress-spinner
+      *ngIf="!dataSource; else elseBlock"
+      class="table-spinner"
+      color="accent"
+      mode="indeterminate"
+    >
+    </mat-progress-spinner>
+
+    <ng-template #elseBlock>
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox
+              (change)="$event ? masterToggle() : null"
+              [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+              [aria-label]="checkboxLabel()"
+            >
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox
+              (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)"
+              [aria-label]="checkboxLabel(row)"
+            >
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        <!-- ID Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>email</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.email }}
+          </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="designation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Designation</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.designation }}
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.firstName }} {{ row.lastName }}
+          </td>
+        </ng-container>
+
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="mobile">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</th>
+          <td mat-cell *matCellDef="let row">{{ row.mobile }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Image">
+          <th mat-header-cell *matHeaderCellDef>Image</th>
+          <td mat-cell *matCellDef="let row">
+            <img class="table-image" [src]="row.pic" alt="" />
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="dateOfJoining">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Joining Date
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.dateOfJoining }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>address</th>
+          <td mat-cell *matCellDef="let row">{{ row.address }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let row">
+            <div class="table-actions-icon-container">
+              <mat-icon class="table-action-icon" (click)="updateData(row)"
+              matTooltip="Edit the Data"
+              matTooltipPosition="above"
+             matTooltipHideDelay="100"
+                >edit</mat-icon
+              >
+
+              <mat-icon class="table-action-icon" (click)="deletedata(row)"
+              matTooltip="Delete the Data"
+              matTooltipPosition="above"
+             matTooltipHideDelay="100"
+                >delete</mat-icon
+              >
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
+    </ng-template>
+  </div>
+  <mat-paginator
+    class="allusers-paginator"
+    [pageSize]="10"
+    [showFirstLastButtons]="true"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>
