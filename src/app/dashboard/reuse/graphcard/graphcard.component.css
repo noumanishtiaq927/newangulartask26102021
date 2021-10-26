@@ -4,17 +4,26 @@
   justify-content: space-between;
   margin: 1vh 1vw;
 }
-/* .graph1 {
+.graph1 {
+flex:0.7;
 
-  margin: 1vh 1vw;
-} */
-/* .graph1 {
+}
+.graph1 div{
+  min-width:30vw;
+  min-height: 40vh;
+}
+.graph2 {
   flex: 0.3;
 
-} */
+}
+.graph2 div {
+ min-width: 20vw;
+min-height: 40vh;
+
+}
 mat-card {
   margin: 1vh 1vw;
 }
-.gap{
-  flex:1;
-}
+
+
+
